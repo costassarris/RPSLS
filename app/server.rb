@@ -40,16 +40,10 @@ class RPSLS < Sinatra::Base
       player1.make_move(params[:weapons].to_i)
       computer.random
       game.compare(player1, computer)
-      if game.winner == "DRAW"
-        @winner = "DRAW"
-      else
-      @winner = game.winner.name
-    end
+      game.winner == :draw ? @winner="DRAW" : @winner=game.winner.name
       erb :play
     end
   end
-
-  "DRAW" if
 
   # start the server if ruby file executed directly
   run! if app_file == $0

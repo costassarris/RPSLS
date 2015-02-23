@@ -9,7 +9,7 @@ describe Game do
 
   it 'can return a draw when player and computer make the same choice' do
     game.compare(player, computer1)
-    expect(game.winner).to eq "DRAW"
+    expect(game.winner).to eq :draw
   end
 
   it 'can compare players and computers choice to decide a winner' do

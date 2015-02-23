@@ -3,7 +3,7 @@ class Game
   attr_accessor :winner
 
   def compare(player, computer)
-    @winner="DRAW" if player.choice == computer.choice
+    @winner= :draw if player.choice == computer.choice
     if player.choice == "rock"
       @winner=computer if computer.choice == "paper"
       @winner=player if computer.choice == "scissors"

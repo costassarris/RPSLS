@@ -8,10 +8,7 @@
     <a href="/play">Play Again</a>
   <% end %>
 <% else %>
-  <head align = "center">
     Select Your Weapon
-  </head>
-  <div>
     <p>
     <form action="/play" method="post">
     <input type="radio" name="weapons" value= 1 > Rock<br>
@@ -21,8 +18,7 @@
     <input type="radio" name="weapons" value= 5 >Spock<br>
     <p>
     <input type="submit" value="Submit">
-  </form>
-  </div>
+    </form>
 <% end %>
 
 <% if @message2 %>
