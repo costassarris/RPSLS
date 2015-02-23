@@ -1,7 +1,13 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/computer'
+require './lib/game'
 
 class RPSLS < Sinatra::Base
+
+  game = Game.new
+  computer = Computer.new
+  player1 = Player.new("")
 
   get '/' do
     erb :index
@@ -21,6 +27,29 @@ class RPSLS < Sinatra::Base
       erb :newgame
     end
   end
+
+  get '/play' do
+    erb :play
+  end
+
+  post '/play' do
+    if params[:weapons] == nil
+      @message2 = "Choose One!"
+      erb :play
+    else
+      player1.make_move(params[:weapons].to_i)
+      computer.random
+      game.compare(player1, computer)
+      if game.winner == "DRAW"
+        @winner = "DRAW"
+      else
+      @winner = game.winner.name
+    end
+      erb :play
+    end
+  end
+
+  "DRAW" if
 
   # start the server if ruby file executed directly
   run! if app_file == $0

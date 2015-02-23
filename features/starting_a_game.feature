@@ -10,3 +10,5 @@ Feature: Starting the game
     When I enter the name "John" in the "name" field
     And I click on "Submit"
     Then I should see "Game on John!"
+    When I click on "Start Game"
+    Then I should see "Select Your Weapon"
