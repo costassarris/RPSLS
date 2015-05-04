@@ -4,6 +4,7 @@ require './lib/computer'
 require './lib/game'
 
 class RPSLS < Sinatra::Base
+  set :public_folder, Proc.new { File.join(root, '..', "public") }
 
   game = Game.new
   computer = Computer.new
