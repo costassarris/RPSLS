@@ -1,0 +1,17 @@
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size:20px;
+}
+
+.button {
+  border-radius: 100px;
+  color: white;
+  background-color: green;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+#textfield {
+  border-radius: 100px;
+  padding: 5px 10px;
+}

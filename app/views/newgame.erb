@@ -1,18 +1,28 @@
-<div align = "center">
+<html>
 
-<% if @player1 %>
-  Game on <%= @player1 %>!
-  <a href="/play">Start Game</a>
-<% else %>
-  <form action="/newgame" method="post">
-    Enter your name:
-    <input type="text" name="name">
-    <input type="submit" value="Submit">
-  </form>
-<% end %>
+<head>
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
 
-<% if @message %>
-  <h1><%= @message %></h1>
-<% end %>
+<body>
+  <div align = "center">
 
-</div>
+  <% if @player1 %>
+    Game on <%= @player1 %>!
+    <a class="button" href="/play">Start Game</a>
+  <% else %>
+    <form action="/newgame" method="post">
+      Enter your name:
+      <input id="textfield" type="text" name="name">
+      <input type="submit" value="Submit">
+    </form>
+  <% end %>
+
+  <% if @message %>
+    <h1><%= @message %></h1>
+  <% end %>
+
+  </div>
+</body>
+
+</html>

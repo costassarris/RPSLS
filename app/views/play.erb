@@ -1,19 +1,30 @@
+<html>
 
-<% if @winner %>
-  <% if @winner != "DRAW" %>
-    <%= @winner %> wins!
-    <a href="/play">Play Again</a>
-  <% else %>
-    It's a draw!
-    <a href="/play">Play Again</a>
-  <% end %>
-<% else %>
-  Select Your Weapon
-    <form action="/play" method="post">
-      <button type="submit" name="weapons" value="1"><img src="images/rock.png" alt="Rock" style="height:128px"></button>
-      <button type="submit" name="weapons" value="2"><img src="images/paper.png" alt="Paper" style="height:128px"></button>
-      <button type="submit" name="weapons" value="3"><img src="images/scissors.png" alt="Scissors" style="height:128px"></button>
-      <button type="submit" name="weapons" value="4"><img src="images/lizard.png" alt="Lizard" style="height:128px"></button>
-      <button type="submit" name="weapons" value="5"><img src="images/spock.png" alt="Spock" style="height:128px"></button>
-  </form>
-<% end %>
+<head>
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+
+<body>
+    <div align="center">
+    <% if @winner %>
+      <% if @winner != "DRAW" %>
+        <%= @winner %> wins!
+        <a class="button" href="/play">Play Again</a>
+      <% else %>
+        It's a draw!
+        <a class="button" href="/play">Play Again</a>
+      <% end %>
+    <% else %>
+      Select Your Weapon:
+        <form action="/play" method="post">
+          <input type="image" name="weapons" value="1" src="images/rock.png" alt="Rock" style="height:128px">
+          <input type="image" name="weapons" value="2" src="images/paper.png" alt="Paper" style="height:128px">
+          <input type="image" name="weapons" value="3" src="images/scissors.png" alt="Scissors" style="height:128px">
+          <input type="image" name="weapons" value="4" src="images/lizard.png" alt="Lizard" style="height:128px">
+          <input type="image" name="weapons" value="5" src="images/spock.png" alt="Spock" style="height:128px">
+      </form>
+    <% end %>
+  </div>
+</body>
+
+</html>
