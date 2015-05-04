@@ -33,16 +33,11 @@ class RPSLS < Sinatra::Base
   end
 
   post '/play' do
-    if params[:weapons] == nil
-      @message2 = "Choose One!"
-      erb :play
-    else
-      player1.make_move(params[:weapons].to_i)
-      computer.random
-      game.compare(player1, computer)
-      game.winner == :draw ? @winner="DRAW" : @winner=game.winner.name
-      erb :play
-    end
+    player1.make_move(params[:weapons].to_i)
+    computer.random
+    game.compare(player1, computer)
+    game.winner == :draw ? @winner="DRAW" : @winner=game.winner.name
+    erb :play
   end
 
   # start the server if ruby file executed directly
